@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/header :: header('New Category - Game Catalog')}">
+</head>
+<body>
+<div th:replace="~{fragments/navbar :: navbar}"></div>
+
+<main class="container my-4">
+	<h1>Додавання нової категорії</h1>
+
+	<form th:action="@{/categories}" method="POST">
+		<div class="mb-3">
+			<label for="name" class="form-label">Назва категорії</label>
+			<input type="text" class="form-control" id="name" name="name" required>
+		</div>
+		<div class="mb-3">
+			<label for="description" class="form-label">Опис</label>
+			<textarea class="form-control" id="description" name="description" rows="3" required></textarea>
+		</div>
+		<button type="submit" class="btn btn-primary">Створити категорію</button>
+		<a href="/categories" class="btn btn-secondary">Відмінити</a>
+	</form>
+</main>
+
+<div th:replace="~{fragments/footer :: footer}"></div>
+</body>
+</html>
